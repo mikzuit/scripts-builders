@@ -1,6 +1,7 @@
 FROM node:12.4.0-slim
 
-LABEL author="MikZuit <mikexloo@hotmail.com>"
+LABEL author="MikZuit <https://github.com/mikzuit>"
+LABEL author-site="https://mikzuit.com"
 LABEL version=1.1
 
 USER node

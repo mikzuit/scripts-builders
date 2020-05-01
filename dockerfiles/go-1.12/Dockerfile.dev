@@ -1,5 +1,8 @@
 FROM golang:alpine
 
+LABEL author="MikZuit<https://github.com/mikzuit>"
+LABEL author-site="https://mikzuit.com"
+
 COPY dockerfiles/go-1.12/root /
 
 RUN apk add --no-cache ca-certificates \

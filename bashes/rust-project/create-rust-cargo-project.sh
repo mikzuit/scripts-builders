@@ -8,7 +8,7 @@ touch .dockerignore
 
 touch src/main.rs
 echo "fn main() {
-    println!(\"Hello, world!\");
+    println!(\"Hello, there!\");
 }" > src/main.rs
 
 echo '### Build
@@ -20,6 +20,6 @@ echo "[package]
 name = \"main\"
 version = \"1.0.0\"
 authors = [\"Mik.Zuit\"]
-edition = \"2018\"
+edition = \"2020\"
 [dependencies]
 clap = \"2.33.0\" " > Cargo.toml

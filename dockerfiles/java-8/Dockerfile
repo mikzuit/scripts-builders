@@ -1,6 +1,7 @@
 FROM mvpjava/ubuntu-x11
 
-MAINTAINER Andy Luis "MVP Java - mvpjava.com"
+LABEL author="MikZuit<https://github.com/mikzuit>"
+LABEL author-site="https://mikzuit.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -16,9 +17,6 @@ RUN apt-get update && \
 ###################################
 #### Install Java 8
 ###################################
-#### ---------------------------------------------------------------
-#### ---- Change below when upgrading version ----
-#### ---------------------------------------------------------------
 ## https://download.oracle.com/otn-pub/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.tar.gz
 ARG JAVA_MAJOR_VERSION=${JAVA_MAJOR_VERSION:-8}
 ARG JAVA_UPDATE_VERSION=${JAVA_UPDATE_VERSION:-202}
@@ -66,7 +64,6 @@ RUN sudo curl -sL http://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/
   | gunzip \
   | tar x -C /usr/ \
 && ln -s ${MAVEN_HOME} /usr/maven
-
 
 ENV USER=mvpjava
 ENV HOME=/home/mvpjava
