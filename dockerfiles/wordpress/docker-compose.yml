@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  db_node_domain:
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: password
+      container_name: wordpress_db
+  wordpress:
+    depends_on:     
+      - db_node_domain
+    image: wordpress:latest    
+    expose:
+      - 80
+    restart: always
+    environment:
+      VIRTUAL_HOST: blog.mikzub.dev
+      WORDPRESS_DB_HOST: db_node_domain:3306 
+      WORDPRESS_DB_USER: wordpress  
+      WORDPRESS_DB_PASSWORD: password
+    container_name: wordpress
+    volumes:
+      db_data:
+networks:
+  default:
+    external:
+    name: nginx-proxy
