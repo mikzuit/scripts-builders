@@ -20,7 +20,7 @@ RUN mkdir -p /home/node/app
 RUN echo "-m 300M"
 RUN echo "--memory-swap 1G"
 
-WORKDIR /home/node/app
+WORKDIR /usr/src/app
 
 RUN npm install -g yarn
 RUN npm install -g nodemon

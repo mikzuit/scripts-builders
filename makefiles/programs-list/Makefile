@@ -23,6 +23,8 @@ terraform:
 
 # Add azure here
 
+# Add config globals for git
+
 # Add any other program here then in all sector
 
 .PHONY: clean

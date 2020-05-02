@@ -17,6 +17,11 @@ docker-run-go-1.12: check-dir
 docker-exec-node-sys:
 	docker exec -it --user=1000:1000 sys-node-12.4.0 "$@"
 
+# Node sys builder
+docker-build-node-sys:
+	docker build -t sys-node https://github.com/mikzuit/scripts-builders.git#develop:dockerfiles/node-12.4.0 .
+docker-exec-node-sys:
+	docker exec -it --user=1000:1000 sys-node-12.4.0 "$@"
 check-dir:
 ifndef DIR
 	$(error DIR ,of your project, should be defined)
