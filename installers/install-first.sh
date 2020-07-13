@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt install -y build-essential ca-certificates apt-transport-https gnupg-agent software-properties-common
+
 sudo apt install -y curl
 
 curl --version
@@ -11,3 +13,5 @@ wget --version
 sudo apt install -y git-all
 
 git --version
+
+sudo apt install -y terminator

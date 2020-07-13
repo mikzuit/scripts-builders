@@ -1,11 +1,20 @@
-all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
+# all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
 
-partial: vagrant
+# groups of groups
+all: languages developers devops
+partial: developers devops
 
-ansible:
-	./installers/install-ansible.sh
-aws:
-	./installers/install-aws2-cli.sh
+
+# groups
+test-task: devops
+languages: golang rustlang
+developers: vagrant docker docker-compose docker-machine gitloglive virtualbox
+
+devops: ansible aws terraform ibmcloudsdk azure gcloudsdk
+
+# individuals
+docker:
+	./installers/install-docker.sh
 gitloglive:
 	./installers/install-git-loglive.sh
 docker-compose:
@@ -18,6 +27,17 @@ vagrant:
 	./installers/install-vagrant.sh
 terraform:
 	./installers/install-terraform.sh
+ansible:
+	./installers/install-ansible.sh
+aws:
+	./installers/install-aws2-cli.sh
+gcloudsdk:
+	./installers/install-google-cloud-sdk.sh
+azure:
+	./installers/install-azure-cli.sh
+ibmcloudsdk:
+	./installers/install-ibm-cli.sh
+
 
 # Add robomongo here
 
