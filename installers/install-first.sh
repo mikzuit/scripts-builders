@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt install -y build-essential ca-certificates apt-transport-https gnupg-agent software-properties-common
+sudo apt install -y build-essential ca-certificates apt-transport-https gnupg-agent software-properties-common nano gedit
 
 sudo apt install -y curl
 

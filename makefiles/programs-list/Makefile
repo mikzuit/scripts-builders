@@ -6,7 +6,7 @@ partial: developers devops
 
 
 # groups
-test-task: devops
+test_tasks: devops
 languages: golang rustlang
 developers: vagrant docker docker-compose docker-machine gitloglive virtualbox
 
@@ -17,9 +17,9 @@ docker:
 	./installers/install-docker.sh
 gitloglive:
 	./installers/install-git-loglive.sh
-docker-compose:
+docker_compose:
 	./installers/install-docker-compose.sh
-docker-machine:
+docker_machine:
 	./installers/install-docker-machine.sh
 minikube:
 	./installers/install-minikube.sh
