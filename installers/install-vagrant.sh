@@ -11,3 +11,4 @@ if [[ -z "$(which vagrant)" ]]; then
     sudo mv ./vagrant /usr/local/bin/
 
     sudo chown root:root /usr/local/bin/vagrant
+fi

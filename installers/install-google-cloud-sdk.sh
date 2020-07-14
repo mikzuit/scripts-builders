@@ -8,3 +8,4 @@ if [[ -z "$(which gcloud)" ]]; then
 
     # Update the package list and install the Cloud SDK
     sudo apt-get update && sudo apt-get install google-cloud-sdk
+fi

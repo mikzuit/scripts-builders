@@ -7,3 +7,4 @@ if [[ -z "$(which docker-machine)" ]]; then
 
     # For Windows visit:
     # https://docs.docker.com/machine/install-machine/
+fi
