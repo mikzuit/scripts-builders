@@ -1,11 +1,13 @@
 #!/bin/bash
 
-curl "https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip" -o "vagrant.zip"
+if [[ -z "$(which vagrant)"]]; then
 
-unzip ./vagrant.zip
+    curl "https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip" -o "vagrant.zip"
 
-chmod +x ./vagrant
+    unzip ./vagrant.zip
 
-sudo mv ./vagrant /usr/local/bin/
+    chmod +x ./vagrant
 
-sudo chown root:root /usr/local/bin/vagrant
+    sudo mv ./vagrant /usr/local/bin/
+
+    sudo chown root:root /usr/local/bin/vagrant

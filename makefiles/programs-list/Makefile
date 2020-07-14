@@ -8,9 +8,12 @@ partial: developers devops
 # groups
 test_tasks: devops
 languages: golang rustlang
+
 developers: vagrant docker docker-compose docker-machine gitloglive virtualbox
+	./installers/install-first.sh
 
 devops: ansible aws terraform ibmcloudsdk azure gcloudsdk
+	./installers/install-first.sh
 
 # individuals
 docker:
@@ -34,6 +37,12 @@ aws:
 gcloudsdk:
 	./installers/install-google-cloud-sdk.sh
 azure:
+	./installers/install-azure-cli.sh
+ibmcloudsdk:
+	./installers/install-ibm-cli.sh
+helm:
+	./installers/install-google-cloud-sdk.sh
+kubectl:
 	./installers/install-azure-cli.sh
 ibmcloudsdk:
 	./installers/install-ibm-cli.sh
