@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt install -yqq build-essential ca-certificates apt-transport-https \
-gnupg-agent software-properties-common python-software-properties nano gedit file unzip htop
+gnupg-agent software-properties-common nano gedit file unzip htop
 
 sudo apt install -yqq curl
 
@@ -11,7 +11,7 @@ sudo apt install -yqq wget
 
 wget --version
 
-sudo apt install -yqq git-all
+sudo apt install -yqq git
 
 git --version
 
