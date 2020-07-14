@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which vagrant)"]]; then
+if [[ -z "$(which vagrant)" ]]; then
 
     curl "https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip" -o "vagrant.zip"
 

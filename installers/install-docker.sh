@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which docker)"]]; then
+if [[ -z "$(which docker)" ]]; then
 
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
