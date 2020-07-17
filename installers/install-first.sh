@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get install -yqq build-essential ca-certificates apt-transport-https \
-gnupg-agent software-properties-common nano gedit file unzip htop tar libpam_craklib
+gnupg-agent software-properties-common nano gedit file unzip htop tar || exit 1
 
 if [[ -z  "$(which curl)" ]]; then
     sudo apt-get install -yqq curl
@@ -12,7 +12,7 @@ if [[ -z  "$(which wget)" ]]; then
 fi
 
 if [[ -z  "$(which git)" ]]; then
-    sudo apt-get install -yqq git
+    sudo apt-get install -yqq git || exit 1
 fi
 
 sudo apt-get install -yqq terminator
@@ -52,4 +52,6 @@ sed -i.bak '{s/password[[:space:]]\+requisite[[:space:]]\+pam_cracklib.so retry=
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt-get update
-sudo apt-get install -y code code-insiders
+sudo apt-get install -y code code-insiders || exit
+
+#apt-utils
