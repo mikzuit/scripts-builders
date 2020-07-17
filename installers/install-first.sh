@@ -45,7 +45,7 @@ sudo snap install skype --classic
 sudo snap install blender
 
 # libpam_cracklib password security
-sudo apt-get install libpam-cracklib
+sudo apt-get install -y libpam-cracklib
 sed -i.bak '{s/password[[:space:]]\+requisite[[:space:]]\+pam_cracklib.so retry=3 minlen=8 difok=3/password        requisite       pam_cracklib.so retry=3 minlen=16 difok=3 ucredit=-1 lcredit=-2 dcredit=-2 ocredit=-2/g}' /etc/pam.d/common-password
 
 # vscode && code-insiders
