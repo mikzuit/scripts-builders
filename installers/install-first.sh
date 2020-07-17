@@ -4,18 +4,18 @@ sudo apt-get install -yqq build-essential ca-certificates apt-transport-https \
 gnupg-agent software-properties-common nano gedit file unzip htop tar libpam_craklib
 
 if [[ -z  "$(which curl)" ]]; then
-    sudo apt install -yqq curl
+    sudo apt-get install -yqq curl
 fi
 
 if [[ -z  "$(which wget)" ]]; then
-    sudo apt install -yqq wget
+    sudo apt-get install -yqq wget
 fi
 
 if [[ -z  "$(which git)" ]]; then
-    sudo apt install -yqq git
+    sudo apt-get install -yqq git
 fi
 
-sudo apt install -yqq terminator
+sudo apt-get install -yqq terminator
 
 # jq -> json parser for terminal
 git clone https://github.com/stedolan/jq.git
