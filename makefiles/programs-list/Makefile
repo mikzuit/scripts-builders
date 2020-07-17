@@ -9,7 +9,7 @@ partial: developers devops
 test_tasks: devops
 languages: golang rustlang
 
-developers: vagrant docker docker-compose docker-machine gitloglive virtualbox
+developers: vagrant docker docker_compose docker_machine gitloglive virtualbox
 	./installers/install-first.sh
 
 devops: ansible aws terraform ibmcloudsdk azure gcloudsdk
