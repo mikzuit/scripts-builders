@@ -7,5 +7,6 @@ if [[ -z "$(which gcloud)" ]]; then
     curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 
     # Update the package list and install the Cloud SDK
-    sudo apt-get update && sudo apt-get install google-cloud-sdk
+    sudo apt-get update
+    sudo apt-get install -yqq google-cloud-sdk
 fi

@@ -2,7 +2,7 @@
 
 # transmision
 sudo add-apt-repository ppa:transmissionbt/ppa
-sudo apt-get install transmission-gtk transmission-cli transmission-common transmission-daemon
+sudo apt-get install -yqq transmission-gtk transmission-cli transmission-common transmission-daemon
 
 
 # filezilla
