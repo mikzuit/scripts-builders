@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get install -yqq build-essential ca-certificates apt-transport-https \
-gnupg-agent software-properties-common nano gedit file unzip htop tar || exit 1
+gnupg-agent software-properties-common apt-utils nano gedit file unzip htop tar || exit 1
 
 if [[ -z  "$(which curl)" ]]; then
     sudo apt-get install -yqq curl
