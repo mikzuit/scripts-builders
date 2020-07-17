@@ -6,7 +6,10 @@ sudo apt-get install transmission-gtk transmission-cli transmission-common trans
 
 
 # filezilla
-sudo apt install -y filezilla
+sudo apt-get install -y filezilla
+
+# povray required for leocad
+sudo apt-get install -y povray
 
 # leocad
 curl -fs https://github.com/leozide/leocad/releases/download/v19.07.1/LeoCAD-Linux-19.07.1-x86_64.AppImage
@@ -23,3 +26,14 @@ sudo apt-get install -yqq vlc
 sudo apt-get install -yqq easytag
 
 # kdeconnect
+
+# lynis security auditing toolkit
+cd /opt/
+wget https://downloads.cisofy.com/lynis/lynis-3.0.0.tar.gz
+tar xvzf lynis-3.0.0.tar.gz
+mv lynis /usr/local/
+ln -s /usr/local/lynis/lynis /usr/local/bin/lynis
+
+#kdenlive
+sudo add-apt-repository ppa:kdenlive/kdenlive-stable
+sudo apt-get install -y kdenlive

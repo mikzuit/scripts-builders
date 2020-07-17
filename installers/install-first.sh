@@ -1,19 +1,19 @@
 #!/bin/bash
 
-sudo apt install -yqq build-essential ca-certificates apt-transport-https \
-gnupg-agent software-properties-common nano gedit file unzip htop
+sudo apt-get install -yqq build-essential ca-certificates apt-transport-https \
+gnupg-agent software-properties-common nano gedit file unzip htop tar libpam_craklib
 
-sudo apt install -yqq curl
+if [[ -z  "$(which curl)" ]]; then
+    sudo apt install -yqq curl
+fi
 
-curl --version
+if [[ -z  "$(which wget)" ]]; then
+    sudo apt install -yqq wget
+fi
 
-sudo apt install -yqq wget
-
-wget --version
-
-sudo apt install -yqq git
-
-git --version
+if [[ -z  "$(which git)" ]]; then
+    sudo apt install -yqq git
+fi
 
 sudo apt install -yqq terminator
 
@@ -43,3 +43,13 @@ brew install pip3
 sudo snap install postman zoom-client
 sudo snap install skype --classic
 sudo snap install blender
+
+# libpam_cracklib password security
+sudo apt-get install libpam-cracklib
+sed -i.bak '{s/password[[:space:]]\+requisite[[:space:]]\+pam_cracklib.so retry=3 minlen=8 difok=3/password        requisite       pam_cracklib.so retry=3 minlen=16 difok=3 ucredit=-1 lcredit=-2 dcredit=-2 ocredit=-2/g}' /etc/pam.d/common-password
+
+# vscode && code-insiders
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+sudo apt-get update
+sudo apt-get install -y code code-insiders
