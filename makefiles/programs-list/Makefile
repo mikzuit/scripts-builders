@@ -44,8 +44,6 @@ helm:
 	./installers/install-google-cloud-sdk.sh
 kubectl:
 	./installers/install-azure-cli.sh
-ibmcloudsdk:
-	./installers/install-ibm-cli.sh
 
 
 # Add robomongo here
