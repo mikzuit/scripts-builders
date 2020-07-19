@@ -11,7 +11,14 @@ You can you this scripts directly from github like:
 `wget -O - https://raw.githubusercontent.com/mikzuit/scripts-builders/develop/bashes/rust-project/create-rust-cargo-project.sh | bash` #this example build a Rust Project
 
 You can install all programs in `all` target in Makefile like: 
-`make --makefile=makefiles/programs-list/Makefile all` so you would easily get this applications on your computer, execute the command above in the root path of this repo.
+`make -f makefiles/programs-list/Makefile all` so you would easily ALL this applications on your computer, execute the command above in the root path of this repo.
+  If you are a developer you might want to use :
+  ...
+  that will include:
+
+  If you are a devops you might want to use:
+  ...
+  that will include:
 
 You can build or create a binary executable file out of a dockerfile with:
-`make --makefile=makefiles/docker-builds-runs/Makefile docker-build-node-sys`
+`make -f makefiles/docker-builds-runs/Makefile docker-build-node-sys`

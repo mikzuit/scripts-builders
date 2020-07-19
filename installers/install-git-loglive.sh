@@ -9,7 +9,7 @@ do
     git --no-pager log --graph --pretty=oneline --abbrev-commit --decorate --all $*
     sleep 1
 done
-EOF || exit 1
+EOF
 
 chmod +x ./git-loglive.sh
 
