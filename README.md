@@ -2,7 +2,7 @@
 Bunch of Makefiles, Bash files, Dockerfiles, Compose, yaml and script to bundle install programs or run tasks.
 
 # Use Very Carefully
-This scripts contain `rm -f` command on some auto created files but they could work on an unwanted way depending on your OS, be very carefull where to use them.
+This scripts contain `rm -f` command in some files and they could work on an unwanted way depending on your OS, be very carefull where to use them.
 
 # Use Scripts from repo
 This scripts are optimized for latest LTS Ubuntu release (20.04) at last momment this line was updated.
