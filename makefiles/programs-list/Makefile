@@ -1,17 +1,20 @@
 # all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
 
 # groups of groups
-all: languages developers devops
-partial: developers devops
+all: languages_runtimes media_editors developers devops
+
+dev_devops_media: first developers devops media_editors
 
 
-# groups
-test_tasks: devops
-languages: golang rustlang
+# groups tasks
+languages_runtimes: golang rustlang
 
-developers: first vagrant docker docker_compose docker_machine gitloglive virtualbox
+media_editors:
+	./installers/install-media-editing.sh
 
-devops: first ansible aws terraform ibmcloudsdk azure gcloudsdk
+developers: vagrant docker docker_compose docker_machine gitloglive virtualbox
+
+devops: ansible aws terraform ibmcloudsdk azure gcloudsdk
 
 # individuals
 first:

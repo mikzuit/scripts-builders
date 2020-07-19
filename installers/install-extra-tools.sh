@@ -20,8 +20,6 @@ sudo mv LeoCAD-Linux-19.07.1-x86_64.AppImage /usr/loca/bin/leocad
 # vlc
 sudo apt-get install -yqq vlc
 
-# blender
-
 # easytag
 sudo apt-get install -yqq easytag
 
@@ -34,6 +32,6 @@ tar xvzf lynis-3.0.0.tar.gz
 mv lynis /usr/local/
 ln -s /usr/local/lynis/lynis /usr/local/bin/lynis
 
-#kdenlive
-sudo add-apt-repository ppa:kdenlive/kdenlive-stable
-sudo apt-get install -y kdenlive
+# gparted
+sudo apt-get install -yqq gparted
+

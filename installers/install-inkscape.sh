@@ -1,4 +1,3 @@
 #!/bin/bash
 
-sudo add-apt-repository ppa:otto-kesselgulasch/gimp
-sudo apt install inkscape
+sudo snap install inkscape

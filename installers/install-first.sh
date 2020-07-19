@@ -1,7 +1,10 @@
 #!/bin/bash
 
-sudo apt-get install -yqq build-essential ca-certificates apt-transport-https \
-gnupg-agent software-properties-common apt-utils nano gedit file unzip htop tar || exit 1
+sudo apt-get install -yqq build-essential ca-certificates apt-transport-https autoconf \
+gnupg-agent software-properties-common apt-utils nano gedit file unzip htop tar openssh-server gnupg2 || exit 1
+
+sudo systemctl enable ssh
+sudo systemctl start ssh
 
 if [[ -z  "$(which curl)" ]]; then
     sudo apt-get install -yqq curl
@@ -19,15 +22,10 @@ sudo apt-get install -yqq terminator
 
 # jq -> json parser for terminal
 git clone https://github.com/stedolan/jq.git
-
 cd jq
-
 autoreconf -i
-
 ./configure --disable-maintainer-mode
-
 make
-
 sudo make install
 
 # brew && pip3 . piping "|" enter "\n" to bash because brew instalation required once
@@ -40,16 +38,15 @@ echo "eval $($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 brew install pip3
 
 # postman skype zoom blender
-sudo snap install postman zoom-client
+sudo snap install postman
+sudo snap install zoom-client
 sudo snap install skype --classic
-sudo snap install blender
 
 # libpam_cracklib password security
 sudo apt-get install -y libpam-cracklib
 sed -i.bak '{s/password[[:space:]]\+requisite[[:space:]]\+pam_cracklib.so retry=3 minlen=8 difok=3/password        requisite       pam_cracklib.so retry=3 minlen=16 difok=3 ucredit=-1 lcredit=-2 dcredit=-2 ocredit=-2/g}' /etc/pam.d/common-password
 
 # vscode && code-insiders
-
 curl -sL https://packages.microsoft.com/keys/microsoft.asc |
     gpg --dearmor |
     sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
@@ -61,5 +58,13 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" 
 sudo apt-get update
 sudo apt-get install -y code code-insiders || exit 1
 
-#apt-utils
+#tweak tools
+sudo add-apt-repository universe
+sudo apt install -y gnome-tweak-tool
+
 #systemd timezone required for docker 
+# gparted
+sudo apt-get install -y gparted
+
+# tor browser
+sudo apt-get install -y torbrowser-launcher
