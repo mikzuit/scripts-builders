@@ -30,8 +30,8 @@ make
 
 sudo make install
 
-# brew && pip3
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# brew && pip3 . piping "|" enter "\n" to bash because brew instalation required once
+echo -ne '\n' | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 test -r ~/.bash_profile && echo eval" ($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
@@ -55,13 +55,11 @@ curl -sL https://packages.microsoft.com/keys/microsoft.asc |
     sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
 
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" |
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" |
+    sudo tee /etc/apt/sources.list.d/vscode.list
 
-#sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt-get update
-sudo apt-get install -y code code-insiders || exit
+sudo apt-get install -y code code-insiders || exit 1
 
 #apt-utils
 #systemd timezone required for docker 
