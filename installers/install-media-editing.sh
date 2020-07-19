@@ -1,8 +1,8 @@
 #!/bin/bash
 bash ./install-gimp.sh
 bash ./install-inkscape.sh
-sudo snap install blender
+sudo snap install blender --classic
 
 # kdenlive
 sudo add-apt-repository ppa:kdenlive/kdenlive-stable
-sudo apt-get install -y kdenlive
+echo -ne '\n' | sudo apt-get install -y kdenlive
