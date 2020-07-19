@@ -14,7 +14,7 @@ media_editors:
 
 developers: vagrant docker docker_compose docker_machine gitloglive virtualbox
 
-devops: ansible aws terraform ibmcloudsdk azure gcloudsdk
+devops: ansible aws terraform ibmcloudsdk azure gcloudsdk helm
 
 # individuals
 first:
@@ -44,9 +44,11 @@ azure:
 ibmcloudsdk:
 	./installers/install-ibm-cli.sh
 helm:
-	./installers/install-google-cloud-sdk.sh
+	./installers/install-helm.sh
 kubectl:
 	./installers/install-azure-cli.sh
+virtualbox:
+	./installers/install-virtualbox.sh
 
 
 # Add robomongo here
