@@ -12,5 +12,5 @@ if [[ -z "$(which docker)" ]]; then
     # sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
     # repos is not working for ubuntu 20.04 even is publish in docker website, use this temporalily
-    sudo apt-get install docker.io
+    sudo apt-get install -y docker.io
 fi
