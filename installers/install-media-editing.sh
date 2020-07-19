@@ -1,6 +1,6 @@
 #!/bin/bash
-bash ./install-gimp.sh
-bash ./install-inkscape.sh
+bash ./installers/install-gimp.sh
+bash ./installers/install-inkscape.sh
 sudo snap install blender --classic
 
 # kdenlive
