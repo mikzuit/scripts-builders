@@ -35,3 +35,5 @@ ln -s /usr/local/lynis/lynis /usr/local/bin/lynis
 # gparted
 sudo apt-get install -yqq gparted
 
+# brew && pip3
+#bash ./installers/install-brew.sh

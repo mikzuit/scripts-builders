@@ -18,4 +18,4 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 sudo apt-get update
 sudo apt-get install -yqq azure-cli
 
-echo "------------> azure installed succesfully"
+echo "\n------------> azure installed succesfully\n"
