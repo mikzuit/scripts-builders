@@ -6,6 +6,6 @@ if [[ -z "$(which aws)" ]]; then
     sudo rm /tmp/awscliv2.zip
     echo "------------> awscliv1.zip deleted succesfully"
     sudo rm -r /tmp/aws    
-    echo "------------> aws installed succesfully"
+    echo -ne "\n------------> aws installed succesfully\n\n"
 
 fi

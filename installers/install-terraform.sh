@@ -14,4 +14,4 @@ echo "------------> terraform zip file removed succesfully"
 
 sudo chown root:root /usr/local/bin/terraform
 
-echo "\n------------> terraform installed succesfully\n"
+echo -ne "\n------------> terraform installed succesfully\n\n"

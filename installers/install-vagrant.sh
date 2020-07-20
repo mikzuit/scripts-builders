@@ -12,10 +12,10 @@ if [[ -z "$(which vagrant)" ]]; then
 
     sudo rm -R /tmp/vagrant.zip
 
-    echo "------------> vagrant zip file removed succesfully"
+    echo -ne "\n------------> vagrant zip file removed succesfully"
 
     sudo chown root:root /usr/local/bin/vagrant
 
-    echo "------------> vagrant installed succesfully"
+    echo -ne "\n------------> vagrant installed succesfully\n\n"
 
 fi
