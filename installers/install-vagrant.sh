@@ -2,13 +2,20 @@
 
 if [[ -z "$(which vagrant)" ]]; then
 
-    curl "https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip" -o "vagrant.zip"
+    curl "https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_linux_amd64.zip" -o "/tmp/vagrant.zip"
 
-    unzip ./vagrant.zip
+    unzip /tmp/vagrant.zip
 
-    chmod +x ./vagrant
+    chmod +x /tmp/vagrant
 
-    sudo mv ./vagrant /usr/local/bin/
+    sudo mv /tmp/vagrant /usr/local/bin/
+
+    sudo rm -R /tmp/vagrant.zip
+
+    echo "------------> vagrant zip file removed succesfully"
 
     sudo chown root:root /usr/local/bin/vagrant
+
+    echo "------------> vagrant installed succesfully"
+
 fi

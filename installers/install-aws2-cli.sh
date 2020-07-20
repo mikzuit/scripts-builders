@@ -4,5 +4,8 @@ if [[ -z "$(which aws)" ]]; then
     unzip /tmp/awscliv2.zip
     sudo /tmp/aws/install --update
     sudo rm /tmp/awscliv2.zip
-    sudo rm -r /tmp/aws
+    echo "------------> awscliv1.zip deleted succesfully"
+    sudo rm -r /tmp/aws    
+    echo "------------> aws installed succesfully"
+
 fi

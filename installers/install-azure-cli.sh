@@ -17,3 +17,5 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
 #4. Update repository information and install the azure-cli package:
 sudo apt-get update
 sudo apt-get install -yqq azure-cli
+
+echo "------------> azure installed succesfully"
