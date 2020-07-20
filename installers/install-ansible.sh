@@ -11,8 +11,9 @@
 #     sudo -H pip3 install ansible==2.10
 # fi
 if [[ -z "$(which ansible)" ]]; then
-    sudo apt update
-    sudo apt-get install -yqq software-properties-common
-    sudo apt-add-repository --yes --update ppa:ansible/ansible
+    # sudo apt-get install -yqq software-properties-common
+    # sudo apt-add-repository --yes --update ppa:ansible/ansible
+    # latest ppa for latest ubuntu version 
+    # sudo add-apt-repository ppa:ansible/ansible-2.9
     sudo apt-get install -yqq ansible || exit 1
 fi
