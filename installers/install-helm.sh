@@ -5,5 +5,4 @@ if [[ -z "$(which helm)" ]]; then
     echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
     sudo apt-get update
     sudo apt-get install -yqq helm
-    echo -ne "\n------------> helm installed succesfully\n\n"
 fi
