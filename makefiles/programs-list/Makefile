@@ -1,7 +1,7 @@
 # all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
 
 # groups of groups
-all: languages_runtimes media_editors developers devops
+all: first languages_runtimes media_editors developers devops
 
 dev_devops_media: first developers devops media_editors
 

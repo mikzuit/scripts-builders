@@ -8,4 +8,6 @@ chmod +x ./terraform
 
 sudo mv ./terraform /usr/local/bin/
 
+rm ./terraform.zip
+
 sudo chown root:root /usr/local/bin/terraform

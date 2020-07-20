@@ -19,3 +19,6 @@ sudo apt-get install -y virtualbox-6.1
 wget https://download.virtualbox.org/virtualbox/6.1.12/Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack
 # requires a 'y' answer and hit enter
 echo -ne 'y\n' | sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack
+
+# download guest additions to be installed
+wget http://download.virtualbox.org/virtualbox/6.1.0_RC1/VBoxGuestAdditions_6.1.0_RC1.iso -P /tmp
