@@ -21,12 +21,15 @@ fi
 sudo apt-get install -yqq terminator
 
 # jq -> json parser for terminal
+cd /tmp
 git clone https://github.com/stedolan/jq.git
 cd jq
 autoreconf -i
 ./configure --disable-maintainer-mode
 make
 sudo make install
+cd /tmp
+sudo rm -R ./jq
 
 # brew && pip3 . piping "|" enter "\n" to bash because brew instalation required once
 echo -ne '\n' | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
