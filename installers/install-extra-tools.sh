@@ -7,26 +7,33 @@ if [ -z "$(which transmission-gtk)" ]; then
 fi
 
 # filezilla
-sudo apt-get install -y filezilla
+if [ -z "$(which filezilla)" ]; then
+    sudo apt-get install -y filezilla
+fi
 
 # povray required for leocad
-sudo apt-get install -y povray
+if [ -z "$(which povray)" ]; then
+    sudo apt-get install -y povray
+fi
 
 # leocad
 if [ -z "$(which leocad)" ]; then
     wget https://github.com/leozide/leocad/releases/download/v19.07.1/LeoCAD-Linux-19.07.1-x86_64.AppImage -P /tmp
-    sudo chmod 700 /tmp/LeoCAD-Linux-19.07.1-x86_64.AppImage
+    sudo chmod 755 /tmp/LeoCAD-Linux-19.07.1-x86_64.AppImage
     # move to binary folder and rename to leocad
     sudo mv /tmp/LeoCAD-Linux-19.07.1-x86_64.AppImage /usr/local/bin/leocad
+    sudo chown root:root /usr/local/bin/leocad
 fi
 
 # vlc
-sudo apt-get install -yqq vlc
+if [ -z "$(which vlc)" ]; then
+    sudo apt-get install -yqq vlc
+fi
 
 # easytag
-sudo apt-get install -yqq easytag
-
-# kdeconnect
+if [ -z "$(which easytag)" ]; then
+    sudo apt-get install -yqq easytag
+fi
 
 # lynis security auditing toolkit
 if [ -z "$(which lynis)" ]; then
@@ -38,9 +45,5 @@ if [ -z "$(which lynis)" ]; then
     rm /tmp/lynis-3.0.0.tar.gz
 fi
 
-# gparted
-if [ -z "$(which gparted)" ]; then
-    sudo apt-get install -yqq gparted
-fi
 # brew && pip3
 #bash ./installers/install-brew.sh
