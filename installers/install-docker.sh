@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$(which docker)" ]]; then
+if [ -z "$(which docker)" ]; then
 
     # curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
@@ -13,4 +13,14 @@ if [[ -z "$(which docker)" ]]; then
 
     # repos is not working for ubuntu 20.04 even is publish in docker website, use this temporalily
     sudo apt-get install -y docker.io
+
+    sudo groupadd docker
+
+    sudo usermod -aG docker ${USER}
+
+    newgrp docker
+
+    sudo systemctl enable --now docker
+
+    sudo service docker start
 fi
