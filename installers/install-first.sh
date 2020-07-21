@@ -6,15 +6,15 @@ gnupg-agent software-properties-common apt-utils nano gedit file unzip htop tar 
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
-if [[ -z  "$(which curl)" ]]; then
+if [ -z  "$(which curl)" ]; then
     sudo apt-get install -yqq curl
 fi
 
-if [[ -z  "$(which wget)" ]]; then
+if [ -z  "$(which wget)" ]; then
     sudo apt-get install -yqq wget
 fi
 
-if [[ -z  "$(which git)" ]]; then
+if [ -z  "$(which git)" ]; then
     sudo apt-get install -yqq git || exit 1
 fi
 
@@ -59,6 +59,9 @@ sudo apt install -y gnome-tweak-tool
 #systemd timezone required for docker 
 # gparted
 sudo apt-get install -y gparted
+
+# chrome browser
+bash ./installers/install-chrome.sh
 
 # tor browser
 sudo apt-get install -y torbrowser-launcher

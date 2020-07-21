@@ -3,7 +3,7 @@
 # groups of groups
 all: first languages_runtimes media_editors developers devops
 
-dev_devops_media: first developers devops media_editors
+dev_devops_media: first developers devops media_editors extras
 
 
 # groups tasks
@@ -15,6 +15,9 @@ media_editors:
 developers: vagrant docker docker_compose docker_machine gitloglive virtualbox
 
 devops: ansible aws terraform ibmcloudsdk azure gcloudsdk helm
+
+extras:
+	./installers/install-extra-tools.sh
 
 # individuals
 first:
