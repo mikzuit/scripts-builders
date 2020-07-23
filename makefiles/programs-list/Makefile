@@ -1,10 +1,9 @@
 # all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
 
 # groups of groups
-all: languages_runtimes media_editors developers devops
+all: first languages_runtimes media_editors developers devops
 
-dev_devops_media: first developers devops media_editors
-
+dev_devops_media: first developers devops media_editors extras
 
 # groups tasks
 languages_runtimes: golang rustlang
@@ -12,13 +11,20 @@ languages_runtimes: golang rustlang
 media_editors:
 	./installers/install-media-editing.sh
 
-developers: vagrant docker docker_compose docker_machine gitloglive virtualbox
+developers: postman vscodes vagrant docker docker_compose docker_machine gitloglive virtualbox
 
 devops: ansible aws terraform ibmcloudsdk azure gcloudsdk helm
+
+extras:
+	./installers/install-extra-tools.sh
 
 # individuals
 first:
 	./installers/install-first.sh
+postman:
+	./installers/install-postman.sh
+vscodes:
+	./installers/install-vscodes.sh
 docker:
 	./installers/install-docker.sh
 gitloglive:
@@ -51,11 +57,6 @@ virtualbox:
 	./installers/install-virtualbox.sh
 
 
-# Add robomongo here
-
-# Add azure here
-
-# Add config globals for git
 
 # Add any other program here then in all sector
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ -z "$(which gcloud)" ]]; then
+if [ -z "$(which gcloud)" ]; then
     # Add the Cloud SDK distribution URI as a package source
     echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 
@@ -8,5 +8,5 @@ if [[ -z "$(which gcloud)" ]]; then
 
     # Update the package list and install the Cloud SDK
     sudo apt-get update
-    sudo apt-get install -yqq google-cloud-sdk || exit 1
+    sudo apt-get install -yqq google-cloud-sdk
 fi
