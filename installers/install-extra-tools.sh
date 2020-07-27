@@ -35,15 +35,16 @@ if [ -z "$(which easytag)" ]; then
     sudo apt-get install -yqq easytag
 fi
 
-# lynis security auditing toolkit
-if [ -z "$(which lynis)" ]; then
-    wget https://downloads.cisofy.com/lynis/lynis-3.0.0.tar.gz -P /tmp
-    cd /tmp
-    tar xvzf lynis-3.0.0.tar.gz
-    sudo mv lynis /usr/local/
-    sudo ln -s /usr/local/lynis/lynis /usr/local/bin/lynis
-    rm /tmp/lynis-3.0.0.tar.gz
-fi
+# fslint-gui (search duplicated files)
+if [ -z "$(which fslint-gui)" ]; then
+    mkdir -p ~/tmp/fslint
+    cd ~/tmp/fslint
+    wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-gtk2_2.24.0-6_amd64.deb
+    wget http://archive.ubuntu.com/ubuntu/pool/universe/p/pygtk/python-glade2_2.24.0-6_amd64.deb
+    wget http://archive.ubuntu.com/ubuntu/pool/universe/f/fslint/fslint_2.46-1_all.deb
 
+    sudo apt-get install -y ./*.deb
+    sudo rm -R /tmp/fslint
+fi
 # brew && pip3
 #bash ./installers/install-brew.sh

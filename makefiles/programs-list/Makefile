@@ -1,24 +1,43 @@
 # all: vagrant terraform ansible aws gitloglive docker-compose docker-machine minikube clean
 
 # groups of groups
-all: first languages_runtimes media_editors developers devops
+all: first dev_lang dev_extra devops media_editors security extras
 
-dev_devops_media: first developers devops media_editors extras
+all_minus_languages: first dev_extra devops media_editors security extras
+
+regular_user: first security extras
+
+design_users: first media_editors security extras
+
+developer_user: first dev_lang dev_extra media_editors security extras
+
+devops_user: first dev_extra devops media_editors security extras
 
 # groups tasks
-languages_runtimes: golang rustlang
-
 media_editors:
 	./installers/install-media-editing.sh
 
-developers: postman vscodes vagrant docker docker_compose docker_machine gitloglive virtualbox
+dev_lang: golang rustlang php nodejs
+
+dev_extra: postman vscodes vagrant docker docker_compose docker_machine gitloglive virtualbox
 
 devops: ansible aws terraform ibmcloudsdk azure gcloudsdk helm
 
 extras:
 	./installers/install-extra-tools.sh
 
+security:
+	./installers/install-security.sh
+
 # individuals
+php:
+	./installers/install-php.sh
+nodejs:
+	./installers/install-nodejs-nvm.sh
+rustlang:
+	-/installers/install-rustlang.sh
+golang:
+	./installers/install-golang.sh
 first:
 	./installers/install-first.sh
 postman:
