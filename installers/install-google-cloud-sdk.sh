@@ -8,5 +8,11 @@ if [ -z "$(which gcloud)" ]; then
 
     # Update the package list and install the Cloud SDK
     sudo apt-get update
-    sudo apt-get install -yqq google-cloud-sdk
+    
+    # at july 29 this issue https://github.com/GoogleCloudPlatform/github-actions/issues/128 would let gcloud with an authentication error on ubuntu 20.04
+    # sudo apt-get install -yqq google-cloud-sdk
+    
+    # meanwhile will user 297.0.1-0 to avoid this error
+    sudo apt install -y google-cloud-sdk=297.0.1-0
 fi
+

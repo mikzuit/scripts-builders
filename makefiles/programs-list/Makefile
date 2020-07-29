@@ -5,13 +5,13 @@ all: first dev_lang dev_extra devops media_editors security extras
 
 all_minus_languages: first dev_extra devops media_editors security extras
 
-regular_user: first security extras
+regular_users: first security extras
 
 design_users: first media_editors security extras
 
-developer_user: first dev_lang dev_extra media_editors security extras
+developer_users: first dev_lang dev_extra media_editors security extras
 
-devops_user: first dev_extra devops media_editors security extras
+devops_users: first dev_extra devops media_editors security extras
 
 # groups tasks
 media_editors:
@@ -74,7 +74,6 @@ kubectl:
 	./installers/install-azure-cli.sh
 virtualbox:
 	./installers/install-virtualbox.sh
-
 
 
 # Add any other program here then in all sector

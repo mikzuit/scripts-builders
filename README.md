@@ -48,8 +48,9 @@ or being in the programs-list folder: (`cd makefiles/programs-list`)
 
 (Need update) 
   If you are a regular user you might want to use:
-    `i_am_a_regular_user`
+    `make -f makefiles/programs-list/Makefile regular_users`
   that will include:
+
     - git
     - curl
     - wget
@@ -71,7 +72,6 @@ or being in the programs-list folder: (`cd makefiles/programs-list`)
     - inkscape
     - blender
     - kdenlive
-
     - clamav
     - clamav-daemon
     - clamtkcl
@@ -79,8 +79,9 @@ or being in the programs-list folder: (`cd makefiles/programs-list`)
     - libpam-cracklib
 
   If you are a developer you might want to use :
-    `i_am_a_developer_user`
+    `make -f makefiles/programs-list/Makefile developer_users`
   that will include:
+
     - docker (will also add your user to docker group)
     - docker-compose
     - docker-machine
@@ -92,8 +93,9 @@ or being in the programs-list folder: (`cd makefiles/programs-list`)
     - virtualbox
 
   If you are a devops you might want to use:
-    `i_am_a_devops_user`
+    `make -f makefiles/programs-list/Makefile devops_users`
   that will include:
+
     - all packages for developers
     - ansible
     - aws
@@ -104,5 +106,6 @@ or being in the programs-list folder: (`cd makefiles/programs-list`)
     - helm
     - minikube
     - kubectl
+
 (Need update) Also you can build or create a binary executable file out of a dockerfile with:
 `make -f makefiles/docker-builds-runs/Makefile docker-build-node-sys`
