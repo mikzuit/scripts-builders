@@ -3,7 +3,7 @@
 sudo apt-get update
 
 sudo apt-get install -yqq build-essential ca-certificates apt-transport-https autoconf gnupg-agent net-tools nmap\
- software-properties-common apt-utils nano gedit file unzip htop tar openssh-server gnupg2 dconf-editor lm-sensors || exit 1
+ software-properties-common apt-utils nano gedit file unzip htop tar openssh-server gnupg2 dconf-editor lm-sensors dsniff|| exit 1
 
 sudo systemctl enable ssh
 sudo systemctl start ssh
