@@ -14,5 +14,8 @@ if [ -z "$(which gcloud)" ]; then
     
     # meanwhile will user 297.0.1-0 to avoid this error
     sudo apt install -y google-cloud-sdk=297.0.1-0
+
+    # you can install google-cloud-sdk=306.0.0 or latest and fix with workaround in:
+    # https://github.com/GoogleCloudPlatform/github-actions/issues/128
 fi
 
