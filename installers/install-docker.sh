@@ -14,7 +14,7 @@ if [ -z "$(which docker)" ]; then
     # repos is not working for ubuntu 20.04 even is publish in docker website, use this temporalily
     sudo apt-get install -y docker.io
 
-    if [ "$(getent group docker)" ]; then
+    if [ -z "$(getent group docker)" ]; then
         sudo groupadd docker
     fi
 
