@@ -14,6 +14,9 @@ developer_users: first dev_lang dev_extra media_editors security extras
 devops_users: first dev_extra devops media_editors security extras
 
 # groups tasks
+first:
+	./installers/install-first.sh
+
 media_editors:
 	./installers/install-media-editing.sh
 
@@ -30,6 +33,10 @@ security:
 	./installers/install-security.sh
 
 # individuals
+google-chrome:
+	./installers/install-chrome.sh
+tor-browser:
+	./installers/install-tor.sh
 php:
 	./installers/install-php.sh
 nodejs:
@@ -38,8 +45,6 @@ rustlang:
 	-/installers/install-rustlang.sh
 golang:
 	./installers/install-golang.sh
-first:
-	./installers/install-first.sh
 postman:
 	./installers/install-postman.sh
 vscodes:

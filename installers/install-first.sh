@@ -54,8 +54,3 @@ sudo snap install skype --classic
 if [ -z "$(which google-chrome)" ]; then
     bash ./installers/install-chrome.sh
 fi
-
-## tor browser
-if [ -z "$(which tor)" ]; then
-    sudo apt-get install -y torbrowser-launcher
-fi
