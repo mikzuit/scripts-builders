@@ -2,7 +2,7 @@
 
 if [ -z "$(which vagrant)" ]; then
 
-    curl "https://releases.hashicorp.com/vagrant/2.2.10/vagrant_2.2.10_linux_amd64.zip" -o "vagrant.zip"
+    curl "https://releases.hashicorp.com/vagrant/2.2.13/vagrant_2.2.13_linux_amd64.zip" -o "vagrant.zip"
 
     unzip -o vagrant.zip -d /tmp
 

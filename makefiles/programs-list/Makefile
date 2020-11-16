@@ -24,7 +24,7 @@ dev_lang: golang rustlang php nodejs
 
 dev_extra: postman vscodes vagrant docker docker_compose docker_machine gitloglive virtualbox
 
-devops: ansible aws terraform ibmcloudsdk azure gcloudsdk helm
+devops: ansible aws terraform packer ibmcloudsdk azure gcloudsdk helm
 
 extras:
 	./installers/install-extra-tools.sh
@@ -63,6 +63,8 @@ vagrant:
 	./installers/install-vagrant.sh
 terraform:
 	./installers/install-terraform.sh
+packer:
+	./installers/install-packer.sh
 ansible:
 	./installers/install-ansible.sh
 aws:

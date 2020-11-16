@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ -z "$(which terraform)" ]; then
-    curl "https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip" -o "/tmp/terraform.zip"
+    curl "https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip" -o "/tmp/terraform.zip"
 
     unzip -o /tmp/terraform.zip -d /tmp
 
