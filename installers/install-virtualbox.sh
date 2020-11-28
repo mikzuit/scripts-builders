@@ -11,7 +11,7 @@ if [ -z "$(which virtualbox)" ]; then
      wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
      wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 
-     echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | \
+     echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian eoan contrib" | \
           sudo tee -a /etc/apt/sources.list.d/virtualbox.list
 
      sudo apt-get update
@@ -26,4 +26,10 @@ if [ -z "$(which virtualbox)" ]; then
      
      # remove extension pack file
      sudo rm /tmp/Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack
+
+     if [ -z "$(which virtualbox)" ]; then
+     printf "####################################\n#### virtualbox install failed #####\n####################################\n"
+     fi
+else
+     printf "####################################\n### virtualbox already installed ###\n####################################\n"
 fi
