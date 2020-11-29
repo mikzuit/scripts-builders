@@ -23,6 +23,7 @@ fi
 
 if [ -z  "$(apt -qq list software-properties-common)" ]; then
     sudo apt-get install -yqq software-properties-common
+        if [ "$(which curl)" ]; then
 fi
 
 if [ -z  "$(apt -qq list openssh-server)" ]; then
@@ -47,42 +48,112 @@ fi
 
 if [ -z  "$(which autoconf)" ]; then
     sudo apt-get install -yqq autoconf
+    if [ "$(which autoconf)" ]; then
+        banner "autoconf successfully installed"
+    else
+        banner "Something went wrong with autoconf installation"
+    fi
+else
+    banner "autoconf already installed"
 fi
 
 if [ -z  "$(which nmap)" ]; then
     sudo apt-get install -yqq nmap
+    if [ "$(which nmap)" ]; then
+        banner "nmap successfully installed"
+    else
+        banner "Something went wrong with nmap installation"
+    fi
+else
+    banner "nmap already installed"
 fi
 
 if [ -z  "$(which nano)" ]; then
     sudo apt-get install -yqq nano
+        if [ "$(which nano)" ]; then
+        banner "nano successfully installed"
+    else
+        banner "Something went wrong with nano installation"
+    fi
+else
+    banner "nano already installed"
 fi
 
 if [ -z  "$(which gedit)" ]; then
     sudo apt-get install -yqq gedit
+        if [ "$(which gedit)" ]; then
+        banner "gedit successfully installed"
+    else
+        banner "Something went wrong with gedit installation"
+    fi
+else
+    banner "gedit already installed"
 fi
 
 if [ -z  "$(which file)" ]; then
     sudo apt-get install -yqq file
+        if [ "$(which file)" ]; then
+        banner "file successfully installed"
+    else
+        banner "Something went wrong with file installation"
+    fi
+else
+    banner "file already installed"
 fi
 
 if [ -z  "$(which unzip)" ]; then
     sudo apt-get install -yqq unzip
+        if [ "$(which unzip)" ]; then
+        banner "unzip successfully installed"
+    else
+        banner "Something went wrong with unzip installation"
+    fi
+else
+    banner "unzip already installed"
 fi
 
 if [ -z  "$(which htop)" ]; then
     sudo apt-get install -yqq htop
+        if [ "$(which htop)" ]; then
+        banner "htop successfully installed"
+    else
+        banner "Something went wrong with htop installation"
+    fi
+else
+    banner "htop already installed"
 fi
 
 if [ -z  "$(which tar)" ]; then
     sudo apt-get install -yqq tar
+    if [ "$(which tar)" ]; then
+        banner "tar successfully installed"
+    else
+        banner "Something went wrong with tar installation"
+    fi
+else
+    banner "tar already installed"
 fi
 
 if [ -z  "$(which dconf-editor)" ]; then
     sudo apt-get install -yqq dconf-editor
+    if [ "$(which dconf-editor)" ]; then
+        banner "dconf-editor successfully installed"
+    else
+        banner "Something went wrong with dconf-editor installation"
+    fi
+else
+    banner "dconf-editor already installed"
 fi
 
 if [ -z  "$(which dsniff)" ]; then
     sudo apt-get install -yqq dsniff
+        if [ "$(which dsniff)" ]; then
+        banner "dsniff successfully installed"
+    else
+        banner "Something went wrong with dsniff installation"
+    fi
+else
+    banner "dsniff already installed"
 fi
 
 sudo systemctl enable ssh
