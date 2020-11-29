@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# importing helper-function.sh
+. $(dirname "$0")/helper-function.sh
+
 # wget http://download.virtualbox.org/virtualbox/6.1.0_RC1/VBoxGuestAdditions_6.1.0_RC1.iso
 
 # wget https://download.virtualbox.org/virtualbox/6.1.10/virtualbox-6.1_6.1.10-138449~Ubuntu~eoan_amd64.deb
@@ -27,9 +30,11 @@ if [ -z "$(which virtualbox)" ]; then
      # remove extension pack file
      sudo rm /tmp/Oracle_VM_VirtualBox_Extension_Pack-6.1.12.vbox-extpack
 
-     if [ -z "$(which virtualbox)" ]; then
-     printf "####################################\n#### virtualbox install failed #####\n####################################\n"
-     fi
+     if [ "$(which virtualbox)" ]; then
+        banner "virtualbox successfully installed"
+    else
+        banner "Something went wrong with virtualbox installation"
+    fi
 else
-     printf "####################################\n### virtualbox already installed ###\n####################################\n"
+    banner "virtualbox already installed"
 fi
