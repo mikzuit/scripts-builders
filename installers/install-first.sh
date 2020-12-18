@@ -156,6 +156,17 @@ else
     banner "dsniff already installed"
 fi
 
+if [ -z  "$(which python3-venv)" ]; then
+    sudo apt-get install -yqq python3-venv python3-tk
+        if [ "$(which python3-env)" ]; then
+        banner "python3-venv successfully installed"
+    else
+        banner "Something went wrong with python3-venv installation"
+    fi
+else
+    banner "python3-venv already installed"
+fi
+
 sudo systemctl enable ssh
 sudo systemctl start ssh
 
