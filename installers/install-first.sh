@@ -24,6 +24,8 @@ fi
 if [ -z  "$(apt -qq list software-properties-common)" ]; then
     sudo apt-get install -yqq software-properties-common
         if [ "$(which curl)" ]; then
+		banner "software-properties-common already Installed"
+	fi
 fi
 
 if [ -z  "$(apt -qq list openssh-server)" ]; then
@@ -187,6 +189,12 @@ if [ -z  "$(which pass)" ]; then
         banner "pass successfully installed"
     else
         banner "Something went wrong with pass installation"
+    fi
+    if [ -z "$(which wl-clipboard)" ]; then
+        sudo apt install wl-clipboard -y
+        banner "wl-clipboard successfully installed"
+    else
+        banner "Something went wrong with wl-clipboard installation"
     fi
 else
     banner "pass already installed"

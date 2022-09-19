@@ -4,7 +4,7 @@
 if [ -z "$(which tor)" ]; then
     #sudo apt-get install -y torbrowser-launcher
 
-    TORVERSION="10.0.5"
+    TORVERSION="11.5.2"
 
     wget https://www.torproject.org/dist/torbrowser/${TORVERSION}/tor-browser-linux64-${TORVERSION}_en-US.tar.xz -P /tmp
     
